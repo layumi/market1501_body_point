@@ -9,7 +9,7 @@ for i=1:length(file)
     im = imread(url);
     [h,w,~]=size(im);
     clf;
-    subplot(1,2,1);
+    %subplot(1,2,1);
     imshow(im);hold on;
     imp = reshape(points(:,i),14,[]);
     plot(imp(:,1),imp(:,2),'ro');
@@ -19,7 +19,7 @@ for i=1:length(file)
     plot(imp(9:11,1),imp(9:11,2));
     plot(imp(12:14,1),imp(12:14,2));
     new_im = im(max(imp(1,2)-3,1):h,:,:);
-    subplot(1,2,2);
+    %subplot(1,2,2);
     %heatmap = zeros(h,w,'single');
     %for j=1:14
      %   heatmap(round(imp(j,2)),round(imp(j,1))) = 1;
@@ -27,4 +27,5 @@ for i=1:length(file)
     %w=fspecial('gaussian',[5 5],3);
     %heatmap=imfilter(heatmap,w);
     %imshow(heatmap);
+    pause();
 end
